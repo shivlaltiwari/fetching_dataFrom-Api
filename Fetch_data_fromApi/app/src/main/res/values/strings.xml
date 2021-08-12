@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">API_data</string>
+    <string name="textview">TextView</string>
+</resources>
