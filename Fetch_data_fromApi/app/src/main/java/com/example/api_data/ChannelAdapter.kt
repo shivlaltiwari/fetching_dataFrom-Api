@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ChannelAdapter (val context: Context, val myDatas: MyData) : RecyclerView.Adapter<ChannelAdapter.ChannelDataViewHolder>(){
+class ChannelAdapter (val context: Context, val myDatas: MyData, val movieDate: List<X20210730>) : RecyclerView.Adapter<ChannelAdapter.ChannelDataViewHolder>(){
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChannelDataViewHolder {
@@ -17,13 +18,15 @@ class ChannelAdapter (val context: Context, val myDatas: MyData) : RecyclerView.
 
     override fun onBindViewHolder(holder: ChannelDataViewHolder, position: Int) {
 
-        holder.programId.text = myDatas.result.`2021-07-30`[position].id.toString()
-        holder.programName.text = myDatas.result.`2021-07-30`[position].programme_name
 
+
+        holder.programId.text = movieDate[position].id.toString()
+        holder.programName.text = movieDate[position].programme_name
+       
     }
 
     override fun getItemCount(): Int {
-        return myDatas.result.`2021-07-30`.size
+        return myDatas.result.size
 
     }
     class ChannelDataViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
