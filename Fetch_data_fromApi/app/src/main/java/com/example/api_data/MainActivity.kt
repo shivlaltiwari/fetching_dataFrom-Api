@@ -34,26 +34,25 @@ class MainActivity : AppCompatActivity() {
 //                val mapData: Map<String, Any> = gson.fromJson<String, Any>(data!!.result, Result::class.java)
 //                Log.d("data", mapData.toString())
 
-
                 if (response.isSuccessful) {
                     if (data != null) {
                         Log.d("message", data.toString())
                         val mapKeys: ArrayList<String> = ArrayList<String> ()
                         val keySet = data.result.keys
                         mapKeys.addAll(keySet)
+
                         Log.d("keys", mapKeys.toString())
-                        val showList: List<X20210730> = data.result["2021-07-30"]!!
-                        adapter = ChannelAdapter(this@MainActivity, data, showList)
-                       
+                       // val showList: List<X20210730> = data.result["2021-07-30"]!!
+                        adapter = ChannelAdapter(this@MainActivity, ArrayList<X20210730>(), mapKeys,data , false)
                         val channelList = findViewById<RecyclerView>(R.id.channelList)
-                        channelList.layoutManager = LinearLayoutManager(this@MainActivity)
                         channelList.adapter = adapter
+                        channelList.layoutManager = LinearLayoutManager(this@MainActivity)
                     }
                 }
             }
 
             override fun onFailure(call: Call<MyData>, t: Throwable) {
-                Log.d("message", "Error in Fetching Data")
+                Log.d("err", t.toString())
 
             }
         })

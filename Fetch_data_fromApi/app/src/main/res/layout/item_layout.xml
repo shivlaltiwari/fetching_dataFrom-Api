@@ -5,6 +5,14 @@
     android:layout_width="match_parent"
     android:padding="8dp"
     android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/ProgramDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:height="40dp"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:text="@string/Date" />
 
     <TextView
         android:id="@+id/programId"
@@ -13,7 +21,10 @@
         android:layout_weight="1"
         android:height="40dp"
         android:padding="5dp"
-        android:text="@string/textview" />
+        android:text="@string/textview"
+        android:visibility="gone"/>
+
+
 
     <TextView
         android:id="@+id/programName"
@@ -23,5 +34,6 @@
         android:layout_weight="1"
         android:height="40dp"
         android:padding="5dp"
-        android:text="@string/textview" />
+        android:text="@string/textview"
+        android:visibility="gone"/>
 </LinearLayout>

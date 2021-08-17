@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">API_data</string>
     <string name="textview">TextView</string>
+    <string name="program_id">Program id</string>
+    <string name="program_name">Program Name</string>
+    <string name="Date">Date</string>
+    <string name="textview1">TextView</string>
 </resources>
